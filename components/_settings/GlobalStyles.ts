@@ -79,8 +79,12 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
-    font: normal normal 400 16px/1.15 ${theme.font.family.secondary}, sans-serif;
+    font: normal normal 400 16px/1.1 ${theme.font.family.secondary}, sans-serif;
     -webkit-text-size-adjust: 100%;
+  }
+
+  p {
+    line-height: 1.2;
   }
 
   body {

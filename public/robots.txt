@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://playgames.com.br/
+
+# Sitemaps
+Sitemap: https://playgames.com.br/sitemap.xml

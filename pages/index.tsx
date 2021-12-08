@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 
 import personagens1 from '@/public/images/personagens.png'
 import personagens2 from '@/public/images/personagens2.png'
@@ -13,8 +14,31 @@ import Galery from '@/components/sections/Galery'
 import Units from '@/components/sections/Units'
 
 const Home: NextPage = () => {
+  const title = 'Home - Play Games'
+  const description =
+    'A melhor casa de jogos de Brasília, com entretenimento único e brinquedos exclusivos, está esperando por você. Oferecemos um serviço com a mais elevada qualidade, venha conhecer.'
   return (
     <>
+      <Head>
+        <title>{title}</title>
+
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:url" content="https://playgames.com.br/" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="printscreen.jpg" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://playgames.com.br/" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content="printscreen.jpg" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </Head>
       <Cover />
       <About />
       <Galery

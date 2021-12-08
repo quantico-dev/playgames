@@ -48,28 +48,50 @@ const Hex: HexProps = {
 
 export const Background = styled.section<BackgroundProps>`
   padding: 10rem 0;
-
   display: flex;
-  flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
+  flex-direction: column;
   align-items: center;
-
   background: linear-gradient(
     180deg,
     ${(props) => Hex[props.color].color1} 50%,
     ${(props) => Hex[props.color].color2} 50%
   );
-
   position: relative;
-
   overflow-x: hidden;
+
+  @media (min-width: 768px) {
+    flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
+  }
 `
 export const ContentWrapper = styled.div<ContentWrapperProps>`
-  width: 41%;
-  padding: 4rem 4rem;
+  width: 120%;
+  padding: 10rem 4rem 0rem;
   gap: 1rem;
   display: flex;
   position: relative;
-  z-index: 1;
+  z-index: 0;
+
+  @media (min-width: 768px) {
+    width: 47%;
+    padding: 0rem 2rem;
+    z-index: 1;
+  }
+
+  @media (min-width: 1024px) {
+    width: 44%;
+    padding: 2rem;
+  }
+
+  @media (min-width: 1280px) {
+    width: 47%;
+    padding: 4rem;
+  }
+
+  @media (min-width: 1366px) {
+    width: 47%;
+    padding: 6rem;
+  }
+
   & > div {
     position: relative;
     z-index: 3;
@@ -87,17 +109,11 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
     background: ${(props) => ShapeHex[props.color]};
     top: -80px;
     bottom: 100px;
-    left: 0;
-    right: -5.5px;
-    transform: skew(8deg, 5deg);
   }
   &::after {
     background: ${(props) => ShapeHex[props.color]};
     top: 0px;
     bottom: -80px;
-    left: 0;
-    right: -20px;
-    transform: skew(8.5deg, -3deg);
   }
 `
 
@@ -145,8 +161,18 @@ export const Text = styled.p`
 export const Carousel = styled.div`
   position: absolute;
   z-index: 0;
+  top: 5px;
 
-  width: 60%;
+  min-width: 105%;
+
+  @media (min-width: 768px) {
+    top: auto;
+    min-width: 60%;
+  }
+  @media (min-width: 1280px) {
+    min-width: 55%;
+  }
+
   img {
     width: 100%;
   }

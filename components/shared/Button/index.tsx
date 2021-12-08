@@ -34,7 +34,12 @@ export const LinkButton = ({
 }: LinkButtonProps) => (
   <Wrapper>
     <Link href={href} passHref>
-      <StyledLinkButton target={target} color={color} block={block}>
+      <StyledLinkButton
+        target={target}
+        rel="noreferrer"
+        color={color}
+        block={block}
+      >
         {children}
       </StyledLinkButton>
     </Link>

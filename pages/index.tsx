@@ -20,10 +20,13 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
+        <html lang="pt-br" />
         <title>{title}</title>
 
         <meta name="title" content={title} />
         <meta name="description" content={description} />
+
+        <meta name="robots" content="index, follow" />
 
         <meta property="og:title" content={title} />
         <meta property="og:url" content="https://playgames.com.br/" />

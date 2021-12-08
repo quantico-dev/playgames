@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import theme from '@/components/_settings/theme'
+
 export const StyledNavbar = styled.nav`
   padding: 1rem 1rem;
 
@@ -12,17 +14,25 @@ export const StyledNavbar = styled.nav`
   }
 `
 
-export const Toggle = styled.label`
+type ToggleProps = {
+  open: boolean
+}
+
+export const Toggle = styled.label<ToggleProps>`
   display: flex;
   flex-direction: column;
   width: 30px;
   cursor: pointer;
 
+  position: ${(props) => (props.open ? 'fixed' : 'initial')};
+  right: 20px;
+  z-index: 1000;
+
   @media (min-width: 1024px) {
     display: none;
   }
   span {
-    background: #fff;
+    background: ${(props) => (props.open ? '#000' : '#fff')};
     border-radius: 50rem;
     height: 3px;
     margin: 2.5px 0;
@@ -56,8 +66,49 @@ export const Toggle = styled.label`
   }
 `
 
+type MenuMobileProps = {
+  open: boolean
+}
+
+export const MenuMobile = styled.div<MenuMobileProps>`
+  @media (max-width: 768px) {
+    display: ${(props) => (props.open ? 'flex' : 'none')};
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    ul {
+      gap: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        font-size: ${theme.font.size[6]};
+      }
+    }
+
+    background: #fff;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
 export const Collapse = styled.div`
   display: none;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
   @media (min-width: 1024px) {
     display: block;
   }

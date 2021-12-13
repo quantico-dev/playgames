@@ -68,9 +68,19 @@ const Units = () => (
         <Icon>
           <Image src={pin} alt="" />
         </Icon>
-        <div className="unit-body">
+        <div>
           <h3>Horário de funcionamento:</h3>
-          <p>Funcionando de domingo a domingo das 10h às 22h.</p>
+          <OpeningHours>
+            <h4>DF Plaza</h4>
+            <small>Segunda à sexta de 13h às 22h.</small>
+            <small>Sábado de 12h às 22h.</small>
+            <small>Domingo de 12h às 20h.</small>
+          </OpeningHours>
+          <OpeningHours>
+            <h4>Águas Claras Shopping</h4>
+            <small>Segunda à sábado das 10h às 22h.</small>
+            <small>Domingo de 11h às 21h.</small>
+          </OpeningHours>
         </div>
       </Item>
     </Group>
@@ -196,11 +206,27 @@ const Item = styled.li`
       font: 400 min(calc(1.325rem + 0.9vw), 2rem) / 1.1 'BoldenVan', sans-serif;
       color: #3aa0f8;
     }
-    p {
-      font: 700 min(calc(1.225rem + 0.3vw), 1.5rem) / 1.1 'Nunito', sans-serif;
+    h4,
+    small {
       color: #4e5a70;
     }
+
+    h4 {
+      font: 900 min(calc(1.225rem + 0.3vw), 1.5rem) / 1.1 'Nunito', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+
+    small {
+      font: 700 1rem / 1.1 'Nunito', sans-serif;
+    }
   }
+`
+
+const OpeningHours = styled.div`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 `
 
 const Icon = styled.div`

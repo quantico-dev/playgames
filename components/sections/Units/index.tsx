@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 
-import aguasClaras from '@/public/images/aguasClaras.png'
-import dfPlaza from '@/public/images/dfPlaza.png'
+import aguasClaras from '@/public/images/aguasClaras.jpg'
+import dfPlaza from '@/public/images/dfPlaza.jpg'
 import pin from '@/public/images/pin.png'
 
 import { LinkButton } from '@/components/shared/Button'
